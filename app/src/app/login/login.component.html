@@ -1,34 +1,71 @@
 <main class="main">
-  <div class="content">
+  <form class="content">
     <div class="line">
-      <div>
-        <label>Nome Completo</label>
-        <input class="input">
+      <div class="section">
+        <label for="name">Nome Completo</label>
+        <input class="input" size="65" id="loginName" name="loginName" #loginName>
       </div>
-      <div>
-        <label>Data de Nascimento</label>
-        <input class="input">
+      <div class="section">
+        <label for="date">Data de Nascimento</label>
+        <input class="input" size="65" id="date" name="date" #date>
       </div>
     </div>
     <div class="line">
-      <div>
-        <label>E-mail</label>
-        <input class="input">
+      <div class="section">
+        <label for="email">E-mail</label>
+        <input class="input" size="65" id="email" name="email" #email>
       </div>
-      <div>
-        <label>Profissão</label>
-        <input class="input">
+      <div class="section">
+        <label for="profission">Profissão</label>
+        <input class="input" size="65" id="profission" name="profission" #profission>
       </div>
     </div>
     <div class="line">
-      <div>
-        <label>Telefone para contato</label>
-        <input class="input">
+      <div class="section">
+        <label for="telephone">Telefone para contato</label>
+        <input class="input" size="65" id="telephone" name="telephone" #telephone>
       </div>
-      <div>
-        <label>Celular para contato</label>
-        <input class="input">
+      <div class="section">
+        <label for="phone">Celular para contato</label>
+        <input class="input" size="65" id="phone" name="phone" #phone>
       </div>
     </div>
-  </div>
+
+    <input type="submit" value="Cadastrar contato" id="button"
+      (click)="setValues(loginName.value, date.value, email.value, profission.value, telephone.value, phone.value)"
+    >
+  </form>
 </main>
+
+<style>
+  .line{
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  .section{
+    display: grid;
+    margin-left: 120px;
+  }
+  label{
+    font-size: large;
+  }
+  input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: #008ECF;
+  }
+  .content{
+    margin-top: 50px;
+  }
+  #button{
+    margin-left: 1250px;
+    background-color: #008ECF;
+    color: white;
+    font-weight: 800;
+    font-size: large;
+    border-radius: 3px;
+    padding: 12px;
+  }
+</style>
