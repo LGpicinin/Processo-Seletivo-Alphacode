@@ -1,0 +1,25 @@
+<div>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Data de nascimento</th>
+      <th>E-mail</th>
+      <th>Celular para contato</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let register of registers">
+      <th>{{register.name}}</th>
+      <th>{{register.dateBirth}}</th>
+      <th>{{register.email}}</th>
+      <th>{{register.cell_phone}}</th>
+      <th>
+        <button>
+          <img src="../../assets/editar.png" alt="Botão para editar">
+        </button>
+        <button>
+          <img src="../../assets/excluir.png" alt="Botão para excluir">
+        </button>
+      </th>
+    </tr>
+  </table>
+</div>

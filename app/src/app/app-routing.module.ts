@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { AppComponent } from './app.component';
 
 
-export const routes: Routes = [
-  { path: 'login', component: LoginComponent }
+const routes: Routes = [
+  { path: 'dashboard', component: AppComponent }
 ];
 
 @NgModule({

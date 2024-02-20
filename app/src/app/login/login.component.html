@@ -1,13 +1,13 @@
 <main class="main">
-  <form class="content">
+  <form action="http://127.0.0.1:8000/api/contacts" class="content" method='post'>
     <div class="line">
       <div class="section">
         <label for="name">Nome Completo</label>
-        <input class="input" size="65" id="loginName" name="loginName" #loginName>
+        <input class="input" size="65" id="mane" name="name" #name>
       </div>
       <div class="section">
         <label for="date">Data de Nascimento</label>
-        <input class="input" size="65" id="date" name="date" #date>
+        <input class="input" size="65" id="dateBirth" name="dateBirth" #dateBirth>
       </div>
     </div>
     <div class="line">
@@ -27,13 +27,10 @@
       </div>
       <div class="section">
         <label for="phone">Celular para contato</label>
-        <input class="input" size="65" id="phone" name="phone" #phone>
+        <input class="input" size="65" id="cell_phone" name="cell_phone" #cell_phone>
       </div>
     </div>
-
-    <input type="submit" value="Cadastrar contato" id="button"
-      (click)="setValues(loginName.value, date.value, email.value, profission.value, telephone.value, phone.value)"
-    >
+    <button type="submit" id="button">Cadastrar contato</button>
   </form>
 </main>
 

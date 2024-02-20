@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { TitleComponent } from './title/title.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from  '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TitleComponent, LoginComponent],
+  imports: [TitleComponent, LoginComponent, HttpClientModule, FormsModule],
   template:
   `
     <title-component />
