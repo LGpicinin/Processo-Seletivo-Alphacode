@@ -1,19 +1,18 @@
+import { Contact } from './contact'
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Contact } from './contact';
-import { Observable } from  'rxjs';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError} from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ApiService {
 
-  PHP_API_SERVER = "http://127.0.0.1:8080";
+  PHP_API_SERVER = "http://127.0.0.1:8000";
 
   constructor(private httpClient: HttpClient) {}
 
-  createContact(contact: Contact): Observable<Contact>{
-    return this.httpClient.post<Contact>(`${this.PHP_API_SERVER}/api/contact`, contact);
+  getAll(): Observable<any>{
+    return this.httpClient.get<Contact>(`${this.PHP_API_SERVER}/api/get`);
   }
 }
 

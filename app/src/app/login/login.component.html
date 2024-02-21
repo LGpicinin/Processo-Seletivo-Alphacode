@@ -1,5 +1,5 @@
 <main class="main">
-  <form action="http://127.0.0.1:8000/api/contacts" class="content" method='post'>
+  <form action="http://127.0.0.1:8000/api/create" class="content" method='post'>
     <div class="line">
       <div class="section">
         <label for="name">Nome Completo</label>
@@ -35,6 +35,9 @@
 </main>
 
 <style>
+  main{
+    margin-bottom: 100px;
+  }
   .line{
     display: flex;
     margin-bottom: 50px;
@@ -42,7 +45,7 @@
 
   .section{
     display: grid;
-    margin-left: 120px;
+    margin-left: 70px;
   }
   label{
     font-size: large;
@@ -57,12 +60,13 @@
     margin-top: 50px;
   }
   #button{
-    margin-left: 1250px;
+    margin-left: 1110px;
     background-color: #008ECF;
     color: white;
     font-weight: 800;
     font-size: large;
-    border-radius: 3px;
+    border-radius: 8px;
+    border-color: #008ECF;
     padding: 12px;
   }
 </style>

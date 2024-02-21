@@ -10,7 +10,7 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all(); //fetch all contacts from DB
-        return view('contact.list', ['contacts' => $contacts]);
+        return response($contacts);
     }
 
     public function create(){

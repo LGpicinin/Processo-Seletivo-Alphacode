@@ -1,19 +1,28 @@
 import { Component, OnInit } from "@angular/core";
+import { NgForOf } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import Register from "../register";
+import { ApiService } from "../api.service";
 import { register } from "module";
 
 @Component({
-  selector: 'registers',
+  selector: 'registers-component',
+  imports: [NgForOf],
+  standalone: true,
   templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit{
   registers: Register[] = [];
 
 
-  constructor(private http: HttpClient){}
+  constructor(private apiService: ApiService){}
 
   ngOnInit(): void {
-    var registers = this.http.get('http://127.0.0.1:8000/api/contacts');
+    this.apiService.getAll()
+      .subscribe((response) => {
+        this.registers = response;
+      }
+    );
   }
 }

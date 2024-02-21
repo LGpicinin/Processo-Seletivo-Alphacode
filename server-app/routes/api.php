@@ -18,7 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/contacts/store', 'App\Http\Controllers\ContactController@store');
-Route::get('/contacts/get', 'App\Http\Controllers\ContactController@store');
+
+Route::get('/get', 'App\Http\Controllers\ContactController@index');
+Route::post('/create', 'App\Http\Controllers\ContactController@store');
 
 

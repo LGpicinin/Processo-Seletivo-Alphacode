@@ -1,0 +1,39 @@
+tr{
+  align-items: center;
+}
+
+table{
+
+  margin-top: 100px;
+  margin-left: 60px;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+.top{
+  background-color: #008ECF;
+  color: white;
+  font-size: large;
+
+}
+
+div{
+  border-top: 1px solid #ddd;
+}
+
+button{
+  background-color: white;
+  border: none;
+}
+tr{
+  align-items: center;
+  margin: 15px;
+}
+td, th{
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+th{
+  align-items: center;
+}
