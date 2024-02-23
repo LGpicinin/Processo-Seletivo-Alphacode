@@ -1,9 +1,10 @@
+@if(updateContact.id == 0){
 <main class="main">
   <form action="http://127.0.0.1:8000/api/create" class="content" method='post'>
     <div class="line">
       <div class="section">
         <label for="name">Nome Completo</label>
-        <input class="input" size="65" id="mane" name="name" #name>
+        <input class="input" size="65" id="name" name="name" #name>
       </div>
       <div class="section">
         <label for="date">Data de Nascimento</label>
@@ -33,40 +34,43 @@
     <button type="submit" id="button">Cadastrar contato</button>
   </form>
 </main>
+}
 
-<style>
-  main{
-    margin-bottom: 100px;
-  }
-  .line{
-    display: flex;
-    margin-bottom: 50px;
-  }
+@else{
+<main class="main">
+  <form #loginForm="ngForm" (ngSubmit)="updaterContact(loginForm.value)" class="content" method='put'>
+    <div class="line">
+      <div class="section">
+        <label for="name">Nome Completo</label>
+        <input class="input" size="65" ngModel type="text" id="name" name="name" value="{{updateContact.name}}">
+      </div>
+      <div class="section">
+        <label for="dateBirth">Data de Nascimento</label>
+        <input class="input" size="65" ngModel type="text" id="dateBirth" name="dateBirth" value="{{updateContact.dateBirth}}">
+      </div>
+    </div>
+    <div class="line">
+      <div class="section">
+        <label for="email">E-mail</label>
+        <input class="input" size="65" ngModel type="text" id="email" name="email" value="{{updateContact.email}}">
+      </div>
+      <div class="section">
+        <label for="profission">Profissão</label>
+        <input class="input" size="65" ngModel type="text"  id="profission" name="profission" value="{{updateContact.profission}}">
+      </div>
+    </div>
+    <div class="line">
+      <div class="section">
+        <label for="telephone">Telefone para contato</label>
+        <input class="input" size="65"  ngModel type="text"id="telephone" name="telephone" value="{{updateContact.telephone}}">
+      </div>
+      <div class="section">
+        <label for="cell_phone">Celular para contato</label>
+        <input class="input" size="65" ngModel type="text" id="cell_phone" name="cell_phone" value="{{updateContact.cell_phone}}">
+      </div>
+    </div>
+    <button type="submit" id="button">Atualizar contato</button>
+  </form>
+</main>
+}
 
-  .section{
-    display: grid;
-    margin-left: 70px;
-  }
-  label{
-    font-size: large;
-  }
-  input{
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color: #008ECF;
-  }
-  .content{
-    margin-top: 50px;
-  }
-  #button{
-    margin-left: 1110px;
-    background-color: #008ECF;
-    color: white;
-    font-weight: 800;
-    font-size: large;
-    border-radius: 8px;
-    border-color: #008ECF;
-    padding: 12px;
-  }
-</style>

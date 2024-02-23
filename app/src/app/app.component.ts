@@ -3,26 +3,31 @@ import { TitleComponent } from './title/title.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './registers/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from  '@angular/forms';
 import { ApiService } from './api.service';
-
+import { RouterModule } from '@angular/router';
+import Register from './register';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TitleComponent, LoginComponent, HttpClientModule, FormsModule, RegisterComponent],
+  imports: [TitleComponent, LoginComponent, HttpClientModule, RegisterComponent, RouterModule],
   template:
   `
     <title-component />
 
-    <login-component />
+    <login-component class="card p-2" [updateContact]="selectedContact"></login-component>
 
-    <registers-component />
+    <registers-component (onSelected)="onSelectedProduct($event)" ></registers-component>
 
   `,
-  styleUrl: './app.component.sass',
   providers: [ApiService]
 })
 export class AppComponent {
+  selectedContact: Register = new Register();
   title = 'app';
+
+  onSelectedProduct(contact: Register){
+    console.log('chegou aqui também')
+    this.selectedContact = contact;
+  }
 }

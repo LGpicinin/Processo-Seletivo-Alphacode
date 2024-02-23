@@ -1,20 +1,14 @@
 tr{
   align-items: center;
+  font-weight: 1;
 }
 
 table{
 
   margin-top: 100px;
-  margin-left: 60px;
+  margin-left: 70px;
   border-collapse: collapse;
-  width: 90%;
-}
-
-.top{
-  background-color: #008ECF;
-  color: white;
-  font-size: large;
-
+  min-width: 90%;
 }
 
 div{
@@ -36,4 +30,12 @@ td, th{
 }
 th{
   align-items: center;
+  color: white;
+  font-size: large;
+  font-weight: 450;
+}
+
+
+.mat-mdc-header-row {
+  background-color: #008ECF;
 }

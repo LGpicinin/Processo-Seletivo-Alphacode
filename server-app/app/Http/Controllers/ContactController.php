@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Psy\Readline\Hoa\ConsoleWindow;
 
 class ContactController extends Controller
 {
@@ -37,8 +38,9 @@ class ContactController extends Controller
         ]);
     }
 
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, $id)
     {
+        $contact = Contact::find($id);
         $contact->update([
             'name' => $request->name,
             'dateBirth' => $request->dateBirth,
@@ -48,12 +50,15 @@ class ContactController extends Controller
             'cell_phone' => $request->cell_phone
         ]);
 
-        return redirect('product/' . $contact->id . '/edit');
+        return response($contact);
     }
 
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
+        $contact = Contact::find($id);
+
         $contact->delete();
-        return redirect('contact/');
+
+        return response($contact);
     }
 }
